@@ -1,70 +1,69 @@
 <head>
   <link rel="stylesheet" href="backery-catalogue.css">  
   <script>
-    const bakeryCatalogue = [
-    {
-      category: "Cakes",
-      items: [
-        { name: "Chocolate Fudge Cake", image: "images/chocolate_fudge.jpg", price: "$15" },
-        { name: "Red Velvet", image: "images/red_velvet.jpg", price: "$18" },
-        { name: "Lemon Drizzle", image: "images/lemon_drizzle.jpg", price: "$14" }
-      ]
-    },
-    {
-      category: "Pastries",
-      items: [
-        { name: "Croissant", image: "images/croissant.jpg", price: "$3" },
-        { name: "Apple Turnover", image: "images/apple_turnover.jpg", price: "$4" },
-        { name: "Cream Puff", image: "images/cream_puff.jpg", price: "$3.50" }
-      ]
-    },
-    {
-      category: "Breads",
-      items: [
-        { name: "Sourdough", image: "images/sourdough.jpg", price: "$6" },
-        { name: "Baguette", image: "images/baguette.jpg", price: "$5" },
-        { name: "Multigrain Loaf", image: "images/multigrain.jpg", price: "$7" }
-      ]
-    }
-  ];
+      const bakeryCatalogue = [
+      {
+        category: "Cakes",
+        items: [
+          { name: "Chocolate Fudge Cake", image: "images/chocolate_fudge.jpg", price: "$15" },
+          { name: "Red Velvet", image: "images/red_velvet.jpg", price: "$18" },
+          { name: "Lemon Drizzle", image: "images/lemon_drizzle.jpg", price: "$14" }
+        ]
+      },
+      {
+        category: "Pastries",
+        items: [
+          { name: "Croissant", image: "images/croissant.jpg", price: "$3" },
+          { name: "Apple Turnover", image: "images/apple_turnover.jpg", price: "$4" },
+          { name: "Cream Puff", image: "images/cream_puff.jpg", price: "$3.50" }
+        ]
+      },
+      {
+        category: "Breads",
+        items: [
+          { name: "Sourdough", image: "images/sourdough.jpg", price: "$6" },
+          { name: "Baguette", image: "images/baguette.jpg", price: "$5" },
+          { name: "Multigrain Loaf", image: "images/multigrain.jpg", price: "$7" }
+        ]
+      }
+    ];    
+    const container = document.getElementById("catalogue");  
+    bakeryCatalogue.forEach(category => {
+      const row = document.createElement("div");
+      row.className = "catalogue-row";
     
-  const container = document.getElementById("catalogue");
-
-  bakeryCatalogue.forEach(category => {
-    const row = document.createElement("div");
-    row.className = "catalogue-row";
-  
-    const title = document.createElement("div");
-    title.className = "catalogue-title";
-    title.textContent = category.category;
-    row.appendChild(title);
-  
-    const itemsContainer = document.createElement("div");
-    itemsContainer.className = "catalogue-items";
-  
-    category.items.forEach(item => {
-      const itemDiv = document.createElement("div");
-      itemDiv.className = "catalogue-item";
-  
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.alt = item.name;
-  
-      const name = document.createElement("div");
-      name.textContent = item.name;
-  
-      const price = document.createElement("div");
-      price.textContent = item.price;
-  
-      itemDiv.appendChild(img);
-      itemDiv.appendChild(name);
-      itemDiv.appendChild(price);
-      itemsContainer.appendChild(itemDiv);
+      const title = document.createElement("div");
+      title.className = "catalogue-title";
+      title.textContent = category.category;
+      row.appendChild(title);
+    
+      const itemsContainer = document.createElement("div");
+      itemsContainer.className = "catalogue-items";
+    
+      category.items.forEach(item => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "catalogue-item";
+    
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+    
+        const name = document.createElement("div");
+        name.textContent = item.name;
+    
+        const price = document.createElement("div");
+        price.textContent = item.price;
+    
+        itemDiv.appendChild(img);
+        itemDiv.appendChild(name);
+        itemDiv.appendChild(price);
+        itemsContainer.appendChild(itemDiv);
+      });
+    
+      row.appendChild(itemsContainer);
+      container.appendChild(row);
     });
-  
-    row.appendChild(itemsContainer);
-    container.appendChild(row);
-  });
+    aler('does');
   </script>
 </head>
 <body>
