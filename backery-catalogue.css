@@ -1,0 +1,21 @@
+.catalogue-row {
+  margin-bottom: 30px;
+}
+.catalogue-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.catalogue-items {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+}
+.catalogue-item {
+  min-width: 200px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.catalogue-item img {
+  width: 100%;
+  border-radius: 8px;
+}
