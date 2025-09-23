@@ -1,6 +1,11 @@
 <head>
   <link rel="stylesheet" href="backery-catalogue.css">  
-  <script>
+ 
+</head>
+<body>
+  <div id="catalogue"></div>
+
+   <script>
   const bakeryCatalogue = [
       {
         category: "Cakes",
@@ -27,46 +32,43 @@
         ]
       }
     ]; 
-   document.addEventListener('DOMContentLoaded', function() {
-        const container = document.getElementById("catalogue");  
-        bakeryCatalogue.forEach(category => {
-          const row = document.createElement("div");
-          row.className = "catalogue-row";
-        
-          const title = document.createElement("div");
-          title.className = "catalogue-title";
-          title.textContent = category.category;
-          row.appendChild(title);
-        
-          const itemsContainer = document.createElement("div");
-          itemsContainer.className = "catalogue-items";
-        
-          category.items.forEach(item => {
-            const itemDiv = document.createElement("div");
-            itemDiv.className = "catalogue-item";
-        
-            const img = document.createElement("img");
-            img.src = item.image;
-            img.alt = item.name;
-        
-            const name = document.createElement("div");
-            name.textContent = item.name;
-        
-            const price = document.createElement("div");
-            price.textContent = item.price;
-        
-            itemDiv.appendChild(img);
-            itemDiv.appendChild(name);
-            itemDiv.appendChild(price);
-            itemsContainer.appendChild(itemDiv);
-          });
-        
-          row.appendChild(itemsContainer);
-          container.appendChild(row);
-          });
-    });
+   
+    const container = document.getElementById("catalogue");  
+    bakeryCatalogue.forEach(category => {
+      const row = document.createElement("div");
+      row.className = "catalogue-row";
+    
+      const title = document.createElement("div");
+      title.className = "catalogue-title";
+      title.textContent = category.category;
+      row.appendChild(title);
+    
+      const itemsContainer = document.createElement("div");
+      itemsContainer.className = "catalogue-items";
+    
+      category.items.forEach(item => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "catalogue-item";
+    
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+    
+        const name = document.createElement("div");
+        name.textContent = item.name;
+    
+        const price = document.createElement("div");
+        price.textContent = item.price;
+    
+        itemDiv.appendChild(img);
+        itemDiv.appendChild(name);
+        itemDiv.appendChild(price);
+        itemsContainer.appendChild(itemDiv);
+      });
+    
+      row.appendChild(itemsContainer);
+      container.appendChild(row);
+      });
+    
   </script>
-</head>
-<body>
-  <div id="catalogue"></div>
 </body>
